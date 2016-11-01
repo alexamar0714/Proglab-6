@@ -165,6 +165,24 @@ class Imager():
     def mortun(self,im2,levels=5,scale=0.75):
         return self.tunnel(levels,scale).morph4(im2.tunnel(levels,scale))
 
+
+
+###################OWN CODE#########################
+    def most_frequent_colour(self):
+
+        w, h = self.image.size
+        pixels = self.image.getcolors(w * h)
+
+        most_frequent_pixel = pixels[0]
+
+        for count, colour in pixels:
+            if count > most_frequent_pixel[0]:
+                most_frequent_pixel = (count, colour)
+
+        #compare("Most Common", self.image, most_frequent_pixel[1])
+
+        return most_frequent_pixel
+
 ### *********** TESTS ************************
 
 # Note: the default file paths for these examples are for unix!

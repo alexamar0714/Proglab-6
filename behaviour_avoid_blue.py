@@ -8,13 +8,18 @@ class Behaviour_avoid_blue():
         #self.bbcon = bb()
         cam = Camera()
         self.sensobs = [cam]
-        self.motor_recommandations = []
+        self.motor_recommandations = [('b',1,1000),('f',1,1000),('r',1,1000),('r',1,1000),('r',1,1000),('r',1,1000)]
         self.active_flag = False
         self.halt_request = False
         self.priority = 1
         self.match_degree = 0.0
         self.weight = self.priority*self.match_degree
 
+    def get_weight(self):
+        return self.weight
+
+    def get_motor_recc(self):
+        return self.motor_recommandations
 
     def update_weight(self):
         self.weight = self.priority*self.match_degree
@@ -58,7 +63,9 @@ class Behaviour_avoid_blue():
         self.sense_and_act()
         self.update_weight()
 
-b = Behaviour_avoid_blue()
-b.active_flag = True
-b.sense_and_act()
+#b = Behaviour_avoid_blue()
+#b.active_flag = True
+#b.sense_and_act()
+        
+
         

@@ -2,6 +2,21 @@
 Proglab oppgave 6 
 Dette er et sted hvor vi kan legge til felles koden til oppgaven, sånn at alle har tilgang til siste versjon av prosjektet. Vennligst ta en titt på dokumentasjon angående bruk av GitHub (det er enkelt). https://guides.github.com/activities/hello-world/ gir en ganske god forklaring om hvordan ting fungerer.
 
+-----------------------------------------------------------------------------------------
+
+UPDATE 1:      
+i motor reccomendations så har meg og alex no blitt enige om at vi kjører [ (tuple), (tuple).... ] som betyr at om du har bare 1 recommendation så skal den være [(tuple)] dette slik at bbcon koden kan være generelt. ved å gjøre dette vil det være lettere å utføre flere ting i en omgang, som feks actions >> right -> left -> backwards
+Tuplen skal ha 3 verdier,  
+
+||| 1: en String som forteller hva retning man vil, hhv forward = "f", backwards = "b", right = "r", left = "l"         
+||| 2: en float som definere speed ie hvor fort man vil at tuple(1) skal kjøre, float interval [-1,1]  
+||| 3: en int som fortell hvor lenge en action skal vare i ms(millisekund). int interval [0, inf]
+
+eksempel 1: [("f", 0.9, 2000)]         
+eksempel 2: [("f", 0.9, 2000),("b", 0.9, 2000)]          
+eksempel 2 vil foreksempel starte i posisjon A og kjøre til B, og rett etterpå gå fra B til A igjen.
+
+-----------------------------------------------------------------------------------------
 NB: LES PDF AV OPPGAVEN, DETTE ER SERR VIKTIG
 NB2: Sett dere inn i korleis de wrapper klassene funker
 

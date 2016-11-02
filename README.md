@@ -16,8 +16,8 @@ eksempel 1: [("f", 0.9, 2000)]
 eksempel 2: [("f", 0.9, 2000),("b", 0.9, 2000)]          
 eksempel 2 vil foreksempel starte i posisjon A og kjøre til B, og rett etterpå gå fra B til A igjen.
 
-Behaviour:
-Make a method with name "get_weight()" that returns the weight. this is mostly so that the ARBITRATOR can easily access all the weights of ea behaviour.    
+Behaviour:      
+Make a method with name "get_weight()" that returns the weight. this is mostly so that the ARBITRATOR can easily access all the weights of ea behaviour.         
 Make another method with the name "get_motor_recc()" that returns the behaviours motor reccommendation. this is mostly for the BBCON
 
 -----------------------------------------------------------------------------------------

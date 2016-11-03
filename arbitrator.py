@@ -1,6 +1,7 @@
+from bbcon import BBCON as bb
 class Arbitrator():
-	def __init__(self, bbcon = None):
-		self.bbcon = bbcon
+	def __init__(self):
+		#self.bbcon = bb()
 
 	def choose_action(self, stochastic = True):
 		#Chooses a winning behavior from bbqon stochastically(default) or deterministically

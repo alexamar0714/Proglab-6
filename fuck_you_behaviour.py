@@ -1,5 +1,3 @@
-from bbcon import BBCON
-
 class Fuck_you_behaviour():
 	
     def __init__(self, bb=None):

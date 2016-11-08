@@ -1,8 +1,3 @@
-from ultrasonic import Ultrasonic
-from irproximity_sensor import IRProximitySensor
-from bbcon import BBCON
-
-
 
 class AvoidObj():
 

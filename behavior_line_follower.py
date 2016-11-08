@@ -2,7 +2,7 @@
 class Behaviour_line_follower():
 	def __init__(self, bb, refSens, THRESHOLD = 0.9):
 		self.bbqon = bb
-		ref_sensors = refSens
+		self.ref_sensors = refSens
 		self.THRESHOLD = THRESHOLD
 		self.sensobs = [ref_sensors]
 		self.motor_recommandations = [('f',0,0)]
@@ -80,7 +80,7 @@ class Behaviour_line_follower():
 			
 
 	def update(self):
-		reflactance_values = ref.sensors.update()
+		reflactance_values = self.ref_sensors.sensors.update()
 
 		if self.active_flag:
 			self.consider_deactivation(reflactance_values)

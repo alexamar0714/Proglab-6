@@ -21,7 +21,7 @@ class Behaviour_line_follower():
 	def update_weight(self):
 		self.weight = self.priority*self.match_degree
 
-	def consider_deactivation(self):
+	def consider_deactivation(self, reflactance_values):
 		#If all sensors show dark, the zumo has driven
 		#off the line and we can deactivate
 		for value in reflactance_values:
@@ -30,7 +30,7 @@ class Behaviour_line_follower():
 		return True
 
 
-	def consider_activation(self):
+	def consider_activation(self, reflactance_values):
 		#Check if the zumo has driven back on the line
 		for value in reflactance_values:
 			if value > 1 - THRESHOLD:

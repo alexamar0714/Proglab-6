@@ -33,6 +33,7 @@ def start():
     bbcon.add_motobs(motor)
 
     butt = ZumoButton()
+    print("start")
     butt.wait_for_press()
     print("bug")
 

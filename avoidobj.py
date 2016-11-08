@@ -50,7 +50,7 @@ class AvoidObj():
         if temp_dist <= dist_cm:
             if sides[0]:    #left detected
                 self.motor_recc = [("r",1, 1000)]
-            elif side[1]:   #right detected
+            elif sides[1]:   #right detected
                 self.motor_recc = [("l", 1, 1000)]
             else:           #default, no sides detected
                 self.motor_recc = [("r", 1, 1000)]

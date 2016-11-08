@@ -45,7 +45,7 @@ class AvoidObj():
 
     def update_weight(self): ##behaviour specific method
         dist_cm = 30
-        temp_dist = ultra.get_value()
+        temp_dist = self.ultra.get_value()
         sides = ir_prox.get_value()
         if temp_dist <= dist_cm:
             if sides[0]:    #left detected

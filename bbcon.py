@@ -24,6 +24,8 @@ class BBCON():
     def add_motobs(self, motob):
         self.motobs.append(motob)
 
+    def get_behaviours(self):
+        return self.behaviours
     def active_behaviour(self, behaviour):
         if behaviour not in self.active_behaviours:
             self.active_behaviours.append(behaviour)

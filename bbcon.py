@@ -1,5 +1,14 @@
 import time
-
+from ultrasonic import Ultrasonic
+from irproximity_sensor import IRProximitySensor
+from camera import Camera
+from motors import Motors
+from reflectance_sensors import ReflectanceSensors
+from avoidobj import AvoidObj
+from behavior_line_follower import Behavior_line_follower
+from behaviour_avoid_blue import  Behaviour_avoid_blue
+from arbitrator import Arbitrator
+from fuck_you_behaviour import Fuck_you_behaviour
 
 class BBCON():
 
@@ -19,6 +28,9 @@ class BBCON():
 
     def add_sensob(self, sensob):
         self.sensobs.append(sensob)
+        
+    def add_motobs(self, motob):
+        self.motobs.append(motob)
 
     def active_behaviour(self, behaviour):
         if behaviour not in self.active_behaviours:

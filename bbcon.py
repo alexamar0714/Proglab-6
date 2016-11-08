@@ -36,7 +36,7 @@ class BBCON():
     def run_one_timestep(self):
         self.update_all_sensobs()
         self.update_all_behaviours()
-        motor_recc, halt_req = self.arbitrator.choose_action(Stochastic = True)
+        motor_recc, halt_req = self.arbitrator.choose_action(stochastic = True)
         self.update_motobs(motor_recc, halt_req)
         self.reset_all_sensobs()
 

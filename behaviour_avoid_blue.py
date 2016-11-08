@@ -39,7 +39,7 @@ class Behaviour_avoid_blue():
         #after, urgency very high
 
         if self.active_flag:
-            im = cam.get_value()
+            im = self.cam.get_value()
             im = Imager(im)
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0], rgb[1][1], rgb[1][2])

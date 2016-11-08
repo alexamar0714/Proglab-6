@@ -1,9 +1,6 @@
-from imager2 import Imager
 from bbcon import BBCON
-from camera import Camera
-from ultrasonic import Ultrasonic
 
-class Behaviour_avoid_blue():
+class Fuck_you_behaviour():
 	
     def __init__(self, bb=None):
         self.bbcon = bb

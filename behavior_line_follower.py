@@ -4,7 +4,7 @@ class Behaviour_line_follower():
 		self.bbqon = bb
 		self.ref_sensors = refSens
 		self.THRESHOLD = THRESHOLD
-		self.sensobs = [ref_sensors]
+		self.sensobs = [self.ref_sensors]
 		self.motor_recommandations = [('f',0,0)]
 		self.active_flag = True
 		self.halt_request = False

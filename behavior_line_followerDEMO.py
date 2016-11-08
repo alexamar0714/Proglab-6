@@ -1,14 +1,14 @@
 from reflectance_sensors import ReflectanceSensors
+from bbcon import BBCON as bb
+from arbitrator import arbitrator
 class Behaviour_line_follower():
-	def __init__(self, bb, auto_calibration = True, THRESHOLD = 0.9):
+	def __init__(self, auto_calibration = True, THRESHOLD = 0.9):
 		self.bbqon = bb
-		ref_sensors = ReflectanceSensors(auto_calibration)
 		self.THRESHOLD = THRESHOLD
+		ref_sensors = ReflectanceSensors(auto_calibration)
 		self.sensobs = [ref_sensors]
 		self.motor_recommandations = [('f',0,0)]
-		self.active_flag = True
-		self.halt_request = False
-		self.priority = 1
+		self.priority = 4
 		self.match_degree = 0.0
 		self.weight = self.priority*self.match_degree
 
@@ -88,3 +88,23 @@ class Behaviour_line_follower():
 			self.consider_activation(reflactance_values)
 		self.sense_and_act(reflactance_values)
 		self.update_weight()
+
+def line():
+	arb = arbitrator()
+	bbcon = bb(arbitrator)
+	linef = Behaviour_line_follower()
+	bbcon.add_behaviour(linef)
+	bbcon.active_hehaviour(linef)
+	while(True):
+		linef.sense_and_act()
+		bbcon.update_motobs(linef.get_motor_recc())
+
+
+
+
+
+
+
+
+
+

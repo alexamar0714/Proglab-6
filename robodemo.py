@@ -72,3 +72,59 @@ def shoot_panorama(camera,motors,shots=5):
         im = im.concat_horiz(IMR.Imager(image=camera.update()))
     return im
 
+def get_recc(reflactance_values):
+    THRESHOLD = 0.9
+    motor_recommandations = None
+    l = reflactance_values[2]
+    r = reflactance_values[3]
+    if l > THRESHOLD or r > THRESHOLD:
+        if l < THRESHOLD:
+            motor_recommandations = [("l",1,100)]
+        else:
+            motor_recommandations = [("r",1,100)]
+        return motor_recommandations
+    l = reflactance_values[1]
+    r = reflactance_values[4]
+    if l > THRESHOLD or r > THRESHOLD:
+        if l < THRESHOLD:
+            motor_recommandations = [("l",1,500)]
+        else:
+            motor_recommandations = [("r",1,500)]
+        return motor_recommandations
+    l = reflactance_values[0]
+    r = reflactance_values[5]
+    if l > THRESHOLD or r > THRESHOLD:
+        if l < THRESHOLD:
+            motor_recommandations = [("l",1,1000)]
+        else:
+            motor_recommandations = [("r",1,1000)]
+        return motor_recommandations
+    else: 
+        motor_recommandations = [("f",1,1000)]
+   
+
+def update_motobs(self, motor_recc, motobs):
+        for tuples in motor_recc:
+            if halt_req:
+                for motobs in motobs:
+                    motobs.stop()
+            elif tuples[0] == "f":
+                for motobs in motobs:
+                    motobs.forward(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "b":
+                for motobs in motobs:
+                    motobs.backward(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "r":
+                for motobs in motobs:
+                    motobs.right(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "l":
+                for motobs in motobs:
+                    motobs.left(speed = tuples[1], dur = tuples[2])
+            time.wait(tuples[2]/1000)
+
+def tourist(steps=25,shots=5,speed=.25):
+    ZumoButton().wait_for_press()
+    rs = ReflectanceSensors(); m = Motors();
+    mr = get_recc(rs.get_value()) 
+    update_motobs(mr, m)
+

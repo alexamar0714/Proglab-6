@@ -46,12 +46,12 @@ class AvoidObj():
     def update_weight(self): ##behaviour specific method
         dist_cm = 30
         temp_dist = self.ultra.get_value()
-        sides = ir_prox.get_value()
+        sides = self.ir_prox.get_value()
         if temp_dist <= dist_cm:
             if sides[0]:    #left detected
-                motor_recc = [("r",1, 1000)]
+                self.motor_recc = [("r",1, 1000)]
             elif side[1]:   #right detected
-                motor_recc = [("l", 1, 1000)]
+                self.motor_recc = [("l", 1, 1000)]
             else:           #default, no sides detected
-                motor_recc = [("r", 1, 1000)]
+                self.motor_recc = [("r", 1, 1000)]
             self.match_degree = 1.0

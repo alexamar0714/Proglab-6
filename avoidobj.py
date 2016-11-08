@@ -18,7 +18,7 @@ class AvoidObj():
         self.match_degree = 0.0
 
     def get_weight(self):
-        x = priority * match_degree
+        x = self.priority * self.match_degree
         return x
 
     def get_motor_recc(self):

@@ -5,7 +5,7 @@ class Arbitrator():
 	def choose_action(self, stochastic = True):
 		#Chooses a winning behavior from bbqon stochastically(default) or deterministically
 		#returns the behaviors motor recomandations and halt request
-		behaviors = self.bbcon.get_behaviors()
+		behaviors = self.bbcon.get_behaviours()
 		
 		if not stochastic:													
 			winning_behavior = max(behaviors, key=lambda x: x.get_weight())
@@ -18,4 +18,4 @@ class Arbitrator():
 				if rand < i:
 					winning_behavior = behavior
 
-		return behavior.get_motor_recomandation(), behavior.get_halt_request()
+		return behavior.get_motor_recc(), behavior.get_halt_request()

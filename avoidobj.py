@@ -9,7 +9,7 @@ class AvoidObj():
     match_degree = 0
     motor_recc = None
 
-    def _init_(self, bbcon = None, ultra = None, ir_prox = None):
+    def _init_(self, bbcon, ultra, ir_prox):
         self.ultra = ultra
         self.ir_prox = ir_prox
         self.priority = 8

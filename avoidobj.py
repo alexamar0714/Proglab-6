@@ -10,6 +10,7 @@ class AvoidObj():
     motor_recc = None
 
     def _init_(self, bbcon, ultra, ir_prox):
+        self.bbcon = bbcon
         self.ultra = ultra
         self.ir_prox = ir_prox
         self.priority = 8

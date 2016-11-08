@@ -28,6 +28,9 @@ class BBCON():
 
     def add_sensob(self, sensob):
         self.sensobs.append(sensob)
+        
+    def add_motobs(self, motob):
+        self.motobs.append(motob)
 
     def active_behaviour(self, behaviour):
         if behaviour not in self.active_behaviours:

@@ -41,7 +41,7 @@ class BBCON():
         self.reset_all_sensobs()
 
     def update_all_sensobs(self):
-        for sensors in sensobs:
+        for sensors in self.sensobs:
             sensors.update()
 
     def update_all_behaviours(self):

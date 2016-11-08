@@ -22,7 +22,9 @@ class BBCON():
     def __init__(self, arbitrator):
         self.arbitrator = arbitrator
 
-
+    def set_arb(self, arb):
+        self.arbitrator = arb
+        
     def add_behaviour(self, behaviour):
         self.behaviours.append(behaviour)
 

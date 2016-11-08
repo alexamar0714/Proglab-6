@@ -1,4 +1,3 @@
-from bbcon import BBCON as bb
 class Arbitrator():
 	def __init__(self, bb):
 		self.bbcon = bb

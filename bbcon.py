@@ -22,17 +22,12 @@ class BBCON():
     def __init__(self, arbitrator):
         self.arbitrator = arbitrator
 
-    def set_arb(self, arb):
-        self.arbitrator = arb
-        
+
     def add_behaviour(self, behaviour):
         self.behaviours.append(behaviour)
 
     def add_sensob(self, sensob):
         self.sensobs.append(sensob)
-        
-    def add_motobs(self, motob):
-        self.motobs.append(motob)
 
     def active_behaviour(self, behaviour):
         if behaviour not in self.active_behaviours:

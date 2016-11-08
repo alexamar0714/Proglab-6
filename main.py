@@ -12,13 +12,15 @@ from zumo_button import ZumoButton
 
 
 def start():
-    arb = Arbitrator()
-    bbcon = BBCON(arb)
+    bbcon = BBCON()
+    arb = Arbitrator(bbcon)
     reflect_sens = ReflectanceSensors(True)
     cam = Camera()
     motor = Motors()
     ir = IR()
     ultra = Ultrasonic()
+
+    bbcon.set_arb(arb)
     bbcon.add_behaviour(AvoidObj(bbcon=bbcon, ultra=ultra, ir_prox=ir))
     bbcon.add_behaviour(Behavior_line_follower())
     bbcon.add_behaviour(Behaviour_avoid_blue(bb=bbcon, cam=cam, ultra=ultra))

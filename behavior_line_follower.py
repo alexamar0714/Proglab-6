@@ -25,7 +25,7 @@ class Behaviour_line_follower():
 		#If all sensors show dark, the zumo has driven
 		#off the line and we can deactivate
 		for value in reflactance_values:
-			if value < 1 - THRESHOLD:
+			if value < 1 - self.THRESHOLD:
 				return False
 		return True
 
@@ -33,7 +33,7 @@ class Behaviour_line_follower():
 	def consider_activation(self, reflactance_values):
 		#Check if the zumo has driven back on the line
 		for value in reflactance_values:
-			if value > 1 - THRESHOLD:
+			if value > 1 - self.THRESHOLD:
 				return True
 		return False
 
@@ -45,9 +45,9 @@ class Behaviour_line_follower():
 			#Low Pri
 			l = reflactance_values[2]
 			r = reflactance_values[3]
-			if l > THRESHOLD or r > THRESHOLD:
+			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.33
-				if l < THRESHOLD:
+				if l < self.THRESHOLD:
 					self.motor_recommandations = [("l",1,100)]
 				else:
 					self.motor_recommandations = [("r",1,100)]
@@ -56,9 +56,9 @@ class Behaviour_line_follower():
 			#Medium Pri
 			l = reflactance_values[1]
 			r = reflactance_values[4]
-			if l > THRESHOLD or r > THRESHOLD:
+			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.66
-				if l < THRESHOLD:
+				if l < self.THRESHOLD:
 					self.motor_recommandations = [("l",1,500)]
 				else:
 					self.motor_recommandations = [("r",1,500)]
@@ -67,9 +67,9 @@ class Behaviour_line_follower():
 			#High Pri
 			l = reflactance_values[0]
 			r = reflactance_values[5]
-			if l > THRESHOLD or r > THRESHOLD:
+			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 1.00
-				if l < THRESHOLD:
+				if l < self.THRESHOLD:
 					self.motor_recommandations = [("l",1,1000)]
 				else:
 					self.motor_recommandations = [("r",1,1000)]

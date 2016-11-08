@@ -1,14 +1,15 @@
 from imager2 import Imager
-#from bbcon import BBCON as bb
+from bbcon import BBCON
 from camera import Camera
 
 class Behaviour_avoid_blue():
 
-    def __init__(self):
-        #self.bbcon = bb()
-        cam = Camera()
+    def __init__(self, bb=None, cam=None, ultra=None):
+        self.bbcon = bb
+        self.cam = cam
+        self.ultra = ultra
         self.sensobs = [cam]
-        self.motor_recommandations = [('b',1,1000),('f',1,1000),('r',1,1000),('r',1,1000),('r',1,1000),('r',1,1000)]
+        self.motor_recommandations = [('b',1,1000),('f',1,1000),('r',1,1000),('r',1,1000),('r',1,1000)]
         self.active_flag = False
         self.halt_request = False
         self.priority = 1
@@ -26,10 +27,13 @@ class Behaviour_avoid_blue():
 
         
     def consider_deactivation(self):
-        pass
+        if self.ultra.get_value()>30:
+            self.active_flag = False
+            self.match_degree = 0.0
         
     def consider_activation(self):
-        pass
+        if self.ultra.get_value()<=30:
+            self.active_flag = True
 
 
     def sense_and_act(self):
@@ -37,8 +41,8 @@ class Behaviour_avoid_blue():
         #after, urgency very high
 
         if self.active_flag:
-            #im = cam.get_value()
-            im = Imager('images.png')
+            im = cam.get_value()
+            im = Imager(im)
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0], rgb[1][1], rgb[1][2])
             
@@ -46,7 +50,7 @@ class Behaviour_avoid_blue():
                 tot_size = im.xmax * im.ymax
                 if rgb[0]*2>=tot_size: #if blue is more than half the image
                     self.match_degree = 1.0
-                    priority = 10000000
+                    self.priority = 16
                 else:
                     self.match_degree = (rgb[0]*2)/tot_size
             

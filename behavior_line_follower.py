@@ -80,7 +80,7 @@ class Behaviour_line_follower():
 			
 
 	def update(self):
-		reflactance_values = self.ref_sensors.sensors.update()
+		reflactance_values = self.ref_sensors.get_value()
 
 		if self.active_flag:
 			self.consider_deactivation(reflactance_values)

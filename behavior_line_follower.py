@@ -1,4 +1,4 @@
-from reflectance_sensors import ReflectanceSensors
+
 class Behaviour_line_follower():
 	def __init__(self, bb, auto_calibration = True, THRESHOLD = 0.9):
 		self.bbqon = bb

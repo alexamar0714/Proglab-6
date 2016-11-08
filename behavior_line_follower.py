@@ -1,8 +1,8 @@
 
 class Behaviour_line_follower():
-	def __init__(self, bb, refSens, auto_calibration = True, THRESHOLD = 0.9):
+	def __init__(self, bb, refSens, THRESHOLD = 0.9):
 		self.bbqon = bb
-		ref_sensors = refSens(auto_calibration)
+		ref_sensors = refSens
 		self.THRESHOLD = THRESHOLD
 		self.sensobs = [ref_sensors]
 		self.motor_recommandations = [('f',0,0)]

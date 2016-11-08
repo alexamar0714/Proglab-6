@@ -1,7 +1,4 @@
 from imager2 import Imager
-from bbcon import BBCON
-from camera import Camera
-from ultrasonic import Ultrasonic
 
 class Behaviour_avoid_blue():
 

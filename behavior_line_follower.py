@@ -29,6 +29,9 @@ class Behaviour_line_follower():
 				return False
 		return True
 
+	def get_halt_request(self):
+		return self.halt_request
+
 
 	def consider_activation(self, reflactance_values):
 		#Check if the zumo has driven back on the line

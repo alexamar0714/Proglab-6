@@ -80,8 +80,8 @@ class Behaviour_line_follower():
 			#Not on line
 			else: 
 				self.match_degree = 0.00'''
-			l1 = reflactance_values[2],l2 = reflactance_values[1],l3 = reflactance_values[0]
-			r1 = reflactance_values[3],r2 = reflactance_values[4],r3 = reflactance_values[5]
+			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
+			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
 
 
 

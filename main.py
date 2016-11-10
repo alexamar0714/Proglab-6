@@ -21,6 +21,7 @@ def start():
     ir = IR()
     ultra = Ultrasonic()
 
+    bbcon.add_motobs(motor)
     bbcon.set_arb(arb)
     #bbcon.add_behaviour(AvoidObj(bbcon, ultra, ir))
     bbcon.add_behaviour(Behaviour_line_follower(bbcon, reflect_sens))

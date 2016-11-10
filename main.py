@@ -33,9 +33,9 @@ def start():
     bbcon.add_motobs(motor)
 
     butt = ZumoButton()
-    print("start")
+    motor.stop()
     butt.wait_for_press()
-    print("bug")
+    print("weeeeeee")
 
     while True:
         bbcon.run_one_timestep()

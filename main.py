@@ -21,6 +21,7 @@ def start():
     ir = IR()
     ultra = Ultrasonic()
 
+    motor.stop()
     bbcon.set_arb(arb)
     #bbcon.add_behaviour(AvoidObj(bbcon, ultra, ir))
     bbcon.add_behaviour(Behaviour_line_follower(bbcon, reflect_sens))
@@ -33,7 +34,6 @@ def start():
     bbcon.add_motobs(motor)
 
     butt = ZumoButton()
-    motor.stop()
     butt.wait_for_press()
     print("weeeeeee")
 

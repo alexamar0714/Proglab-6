@@ -8,7 +8,7 @@ class AvoidObj():
     halt_request = False
     active_flag = None
     match_degree = 0
-    motor_recc = None
+    motor_recc = [('l',0,0)]
 
     def __init__(self, bbcon, ultra, ir_prox):
         self.bbcon = bbcon

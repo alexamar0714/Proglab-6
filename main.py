@@ -16,7 +16,7 @@ def start():
     bbcon = BBCON()
     arb = Arbitrator(bbcon)
     motor = Motors()
-    reflect_sens = ReflectanceSensors(True)
+    reflect_sens = ReflectanceSensors(False)
     cam = Camera()
     ir = IR()
     ultra = Ultrasonic()

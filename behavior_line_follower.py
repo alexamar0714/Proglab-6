@@ -51,9 +51,9 @@ class Behaviour_line_follower():
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.33
 				if l < self.THRESHOLD:
-					self.motor_recommandations = [("f",0.2,0)]
+					self.motor_recommandations = [("f",0.1,0)]
 				else:
-					self.motor_recommandations = [("f",0.2,0)]
+					self.motor_recommandations = [("f",0.1,0)]
 				return self.motor_recommandations
 
 			#Medium Pri

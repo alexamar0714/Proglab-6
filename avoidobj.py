@@ -51,7 +51,7 @@ class AvoidObj():
 
 
     def update_weight(self): ##behaviour specific method
-        dist_cm = 5
+        dist_cm = 10
         temp_dist = self.ultra.get_value()
         sides = self.ir_prox.get_value()
         print('sides:',sides)

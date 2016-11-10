@@ -34,7 +34,7 @@ def start():
 
     butt = ZumoButton()
     print("start")
-    #butt.wait_for_press()
+    butt.wait_for_press()
     print("bug")
 
     while True:

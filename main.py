@@ -16,7 +16,8 @@ def start():
     bbcon = BBCON()
     arb = Arbitrator(bbcon)
     motor = Motors()
-    motor.stop()
+    bbcon.add_motobs(motor)
+    bbcon.update_motobs(('f',0,0))
     reflect_sens = ReflectanceSensors(True)
     cam = Camera()
     ir = IR()
@@ -31,7 +32,6 @@ def start():
     #bbcon.add_sensob(cam)
     bbcon.add_sensob(ir)
     bbcon.add_sensob(ultra)
-    bbcon.add_motobs(motor)
 
     butt = ZumoButton()
     butt.wait_for_press()

@@ -39,7 +39,9 @@ class BBCON():
         self.update_all_sensobs()
         self.update_all_behaviours()
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
+        print('motor_recc:', motor_recc)
         self.update_motobs(motor_recc, halt_req)
+        print(self.active_behaviours)
         self.reset_all_sensobs()
 
     def update_all_sensobs(self):

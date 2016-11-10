@@ -15,7 +15,7 @@ from bbcon import BBCON
 def start():
     bbcon = BBCON()
     arb = Arbitrator(bbcon)
-    reflect_sens = ReflectanceSensors(False)
+    reflect_sens = ReflectanceSensors(True)
     cam = Camera()
     motor = Motors()
     ir = IR()

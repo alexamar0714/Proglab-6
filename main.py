@@ -17,7 +17,7 @@ def start():
     arb = Arbitrator(bbcon)
     motor = Motors()
     bbcon.add_motobs(motor)
-    bbcon.update_motobs(('f',0,0))
+    bbcon.update_motobs(('f',0,0),True)
     reflect_sens = ReflectanceSensors(True)
     cam = Camera()
     ir = IR()

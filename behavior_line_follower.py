@@ -89,7 +89,7 @@ class Behaviour_line_follower():
 			r = r1 * weightInner + r2 * weightMid + r3 * weightOuter
 
 			total = l - r
-			print(total)		
+			print('Total:',total)		
 			speed = 0.15*total
 			self.match_degree =1000
 

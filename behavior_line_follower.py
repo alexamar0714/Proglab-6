@@ -91,12 +91,12 @@ class Behaviour_line_follower():
 			total = l - r
 			print(total)		
 			speed = 0.001*total
+			self.match_degree =1000
 '''
 			if total < 0:
 				self.motor_recommandations = [("r",abs(speed),0.5)]
 			else:
 				self.motor_recommandations = [("l",abs(speed),0.5)]'''
-			self.match_degree =1000
 
 
 	def update(self):

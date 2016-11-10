@@ -7,7 +7,6 @@ class Arbitrator():
 		#Chooses a winning behavior from bbqon stochastically(default) or deterministically
 		#returns the behaviors motor recomandations and halt request
 		behaviors = self.bbcon.get_behaviours()
-		print(behaviors)
 		if not stochastic:													
 			winning_behavior = max(behaviors, key=lambda x: x.get_weight())
 		else:																	 

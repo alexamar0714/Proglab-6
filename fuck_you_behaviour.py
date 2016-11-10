@@ -15,7 +15,7 @@ class Fuck_you_behaviour():
     def get_motor_recc(self):
         return self.motor_recommandations
 	
-    def halt_request(self):
+    def get_halt_request(self):
         return self.halt_request
 
     def update(self):

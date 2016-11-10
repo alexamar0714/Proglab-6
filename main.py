@@ -27,7 +27,7 @@ def start():
     bbcon.add_behaviour(Behaviour_avoid_blue(bb=bbcon, cam=cam, ultra=ultra))
     bbcon.add_behaviour(fub(bb=bbcon))
     bbcon.add_sensob(reflect_sens)
-    bbcon.add_sensob(cam)
+    #bbcon.add_sensob(cam)
     bbcon.add_sensob(ir)
     bbcon.add_sensob(ultra)
     bbcon.add_motobs(motor)

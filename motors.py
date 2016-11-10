@@ -32,6 +32,7 @@ class Motors():
 
     def forward(self, speed=0.25, dur=None):
         print("FORWARD!")
+        print('Speed:', speed, 'dur', dur)
         self.dc = int(self.max * speed)
         self.set_left_dir(0)
         self.set_right_dir(0)

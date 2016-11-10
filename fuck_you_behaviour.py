@@ -13,7 +13,10 @@ class Fuck_you_behaviour():
         return self.weight
 
     def get_motor_recc(self):
-        return self.motor_recommandations   
+        return self.motor_recommandations
+	
+    def halt_request(self):
+	return self.halt_request
 
     def update(self):
         pass

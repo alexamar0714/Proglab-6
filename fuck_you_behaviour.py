@@ -2,7 +2,7 @@ class Fuck_you_behaviour():
 	
     def __init__(self, bb=None):
         self.bbcon = bb
-        self.motor_recommandations = [('f', 0.1, 0.5)]
+        self.motor_recommandations = [('f', 0.1, 3)]
         self.active_flag = True
         self.halt_request = False
         self.priority = 0.1

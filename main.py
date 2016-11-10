@@ -15,13 +15,13 @@ from bbcon import BBCON
 def start():
     bbcon = BBCON()
     arb = Arbitrator(bbcon)
+    motor = Motors()
+    motor.stop()
     reflect_sens = ReflectanceSensors(True)
     cam = Camera()
-    motor = Motors()
     ir = IR()
     ultra = Ultrasonic()
 
-    motor.stop()
     bbcon.set_arb(arb)
     #bbcon.add_behaviour(AvoidObj(bbcon, ultra, ir))
     bbcon.add_behaviour(Behaviour_line_follower(bbcon, reflect_sens))

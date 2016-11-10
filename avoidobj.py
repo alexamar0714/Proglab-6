@@ -51,9 +51,9 @@ class AvoidObj():
         sides = self.ir_prox.get_value()
         if temp_dist <= dist_cm:
             if sides[0]:    #left detected
-                self.motor_recc = [("r",1, 1000)]
+                self.motor_recc = [("r",1, 1)]
             elif sides[1]:   #right detected
-                self.motor_recc = [("l", 1, 1000)]
+                self.motor_recc = [("l", 1, 1)]
             else:           #default, no sides detected
-                self.motor_recc = [("r", 1, 1000)]
+                self.motor_recc = [("r", 1, 1)]
             self.match_degree = 1.0

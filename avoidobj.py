@@ -5,6 +5,7 @@ class AvoidObj():
     ir_prox = None
     ultra = None
     priority = 0
+    halt_request = False
     active_flag = None
     match_degree = 0
     motor_recc = None
@@ -16,7 +17,10 @@ class AvoidObj():
         self.priority = 8
         self.active_flag = False
         self.match_degree = 0.0
-
+    
+    def get_halt_request(self):
+        return self.halt_request
+    
     def get_weight(self):
         x = self.priority * self.match_degree
         return x

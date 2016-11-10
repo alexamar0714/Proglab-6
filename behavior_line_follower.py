@@ -8,7 +8,7 @@ class Behaviour_line_follower():
 		self.motor_recommandations = [('f',0,0)]
 		self.active_flag = True
 		self.halt_request = False
-		self.priority = 10
+		self.priority = 1000000000
 		self.match_degree = 0.0
 		self.weight = self.priority*self.match_degree
 

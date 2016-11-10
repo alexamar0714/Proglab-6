@@ -38,9 +38,13 @@ class BBCON():
     def run_one_timestep(self):
         print("inloop")
         self.update_all_sensobs()
+        print("fuck1")
         self.update_all_behaviours()
+        print("fuck2")
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = True)
+        print("fuck3")
         self.update_motobs(motor_recc, halt_req)
+        print("fuck4")
         self.reset_all_sensobs()
         print("endloop")
 

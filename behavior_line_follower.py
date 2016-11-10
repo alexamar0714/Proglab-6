@@ -8,7 +8,7 @@ class Behaviour_line_follower():
 		self.motor_recommandations = [('f',0,0)]
 		self.active_flag = True
 		self.halt_request = False
-		self.priority = 1000000000
+		self.priority = 100
 		self.match_degree = 0.0
 		self.weight = self.priority*self.match_degree
 
@@ -24,9 +24,9 @@ class Behaviour_line_follower():
 	def consider_deactivation(self, reflactance_values):
 		#If all sensors show dark, the zumo has driven
 		#off the line and we can deactivate
-		for value in reflactance_values:
-			if value < 1 - self.THRESHOLD:
-				return False
+		#for value in reflactance_values:
+		#	if value < 1 - self.THRESHOLD:
+		#		return False
 		return True
 
 	def get_halt_request(self):
@@ -35,9 +35,9 @@ class Behaviour_line_follower():
 
 	def consider_activation(self, reflactance_values):
 		#Check if the zumo has driven back on the line
-		for value in reflactance_values:
-			if value > 1 - self.THRESHOLD:
-				return True
+		#for value in reflactance_values:
+		#	if value > 1 - self.THRESHOLD:
+		#		return True
 		return False
 
 	def sense_and_act(self, reflactance_values):

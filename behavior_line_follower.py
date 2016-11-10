@@ -50,7 +50,7 @@ class Behaviour_line_follower():
 			r = reflactance_values[3]
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.33
-				if l < self.THRESHOLD:
+				if r < self.THRESHOLD:
 					self.motor_recommandations = [("f",0.1,0)]
 				else:
 					self.motor_recommandations = [("f",0.1,0)]
@@ -61,7 +61,7 @@ class Behaviour_line_follower():
 			r = reflactance_values[4]
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.66
-				if l < self.THRESHOLD:
+				if r < self.THRESHOLD:
 					self.motor_recommandations = [("l",0.1,0.5)]
 				else:
 					self.motor_recommandations = [("r",0.1,0.5)]
@@ -72,7 +72,7 @@ class Behaviour_line_follower():
 			r = reflactance_values[5]
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 1.00
-				if l < self.THRESHOLD:
+				if r < self.THRESHOLD:
 					self.motor_recommandations = [("l",0.2,0.5)]
 				else:
 					self.motor_recommandations = [("r",0.2,0.5)]

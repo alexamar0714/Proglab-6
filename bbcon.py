@@ -64,6 +64,7 @@ class BBCON():
         for tuples in motor_recc:
             if halt_req:
                 for motobs in self.motobs:
+                    print("STOPPING")
                     motobs.stop()
             elif tuples[0] == "f":
                 for motobs in self.motobs:

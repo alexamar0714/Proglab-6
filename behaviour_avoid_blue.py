@@ -40,7 +40,8 @@ class Behaviour_avoid_blue():
 
         if self.active_flag:
             im = self.cam.get_value() #fra Image.open(....)
-            im = Imager(image=im)            
+            im = Imager(image=im)
+            im.display()
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0], rgb[1][1], rgb[1][2])
             

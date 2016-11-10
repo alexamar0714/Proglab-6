@@ -18,5 +18,5 @@ class Arbitrator():
 				i += behavior.get_weight()
 				if rand < i:
 					winning_behavior = behavior
-		print(winning_behavior)
+		print('Winning!: ', winning_behavior)
 		return winning_behavior.get_motor_recc(), winning_behavior.get_halt_request()

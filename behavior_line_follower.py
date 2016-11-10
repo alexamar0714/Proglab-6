@@ -94,7 +94,7 @@ class Behaviour_line_follower():
 			self.match_degree =1000
 
 			if total < 1 and total > -1:
-				self.motor_recommandations = [("f",abs(speed),0.5)]
+				self.motor_recommandations = [("f",0,5,0.5)]
 
 			
 			elif total > 0:

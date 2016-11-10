@@ -51,9 +51,9 @@ class Behaviour_line_follower():
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.33
 				if l < self.THRESHOLD:
-					self.motor_recommandations = [("f",0.2,0.0)]
+					self.motor_recommandations = [("f",0.2,None)]
 				else:
-					self.motor_recommandations = [("f",0.2,0.0)]
+					self.motor_recommandations = [("f",0.2,None)]
 				return self.motor_recommandations
 
 			#Medium Pri
@@ -62,9 +62,9 @@ class Behaviour_line_follower():
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 0.66
 				if l < self.THRESHOLD:
-					self.motor_recommandations = [("l",0.1,0.0)]
+					self.motor_recommandations = [("l",0.1,None)]
 				else:
-					self.motor_recommandations = [("r",0.1,0.0)]
+					self.motor_recommandations = [("r",0.1,None)]
 				return self.motor_recommandations
 
 			#High Pri
@@ -73,9 +73,9 @@ class Behaviour_line_follower():
 			if l > self.THRESHOLD or r > self.THRESHOLD:
 				self.match_degree = 1.00
 				if l < self.THRESHOLD:
-					self.motor_recommandations = [("l",0.3,0)]
+					self.motor_recommandations = [("l",0.3,None)]
 				else:
-					self.motor_recommandations = [("r",0.3,0)]
+					self.motor_recommandations = [("r",0.3,None)]
 				return self.motor_recommandations
 			#Not on line
 			else: 

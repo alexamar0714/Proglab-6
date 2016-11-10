@@ -73,7 +73,7 @@ class BBCON():
                 for motobs in self.motobs:
                     motobs.left(speed = tuples[1], dur = tuples[2])
             print("sleepend")
-            time.sleep(tuples[2]/1000)
+            time.sleep(tuples[2])
             
 
 

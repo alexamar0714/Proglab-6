@@ -14,7 +14,7 @@ class AvoidObj():
         self.bbcon = bbcon
         self.ultra = ultra
         self.ir_prox = ir_prox
-        self.priority = 2
+        self.priority = 4
         self.active_flag = False
         self.match_degree = 0.0
     

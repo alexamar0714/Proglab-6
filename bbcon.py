@@ -65,18 +65,22 @@ class BBCON():
             elif tuples[0] == "f":
                 print('f-drive:', motor_recc)
                 for motobs in self.motobs:
+                    motobs.stop()
                     motobs.forward(speed = tuples[1], dur = tuples[2])
             elif tuples[0] == "b":
                 print('b-drive:', motor_recc)
                 for motobs in self.motobs:
+                    motobs.stop()
                     motobs.backward(speed = tuples[1], dur = tuples[2])
             elif tuples[0] == "r":
                 print('r-drive:', motor_recc)
                 for motobs in self.motobs:
+                    motobs.stop()
                     motobs.right(speed = tuples[1], dur = tuples[2])
             elif tuples[0] == "l":
                 print('l-drive:', motor_recc)
                 for motobs in self.motobs:
+                    motobs.stop()
                     motobs.left(speed = tuples[1], dur = tuples[2])
             elif tuples[0] == "base":
                 for motobs in self.motobs:

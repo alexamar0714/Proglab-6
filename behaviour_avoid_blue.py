@@ -61,11 +61,7 @@ class Behaviour_avoid_blue():
 
 
     def update(self):
-        if self.active_flag:
-            self.consider_deactivation()
-        else:
-            self.consider_activation()
-
+        self.consider_activation()
         self.sense_and_act()
         self.update_weight()
 

@@ -49,6 +49,7 @@ class Behaviour_avoid_blue():
             most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2])
             print("MOST_RGB: ", rgb[0], " vs ", im.xmax * im.ymax)
             if most_rgb != rgb[1][0]: #if the dominant colour is blue
+                self.match_degree = 1
                 #tot_size = im.xmax * im.ymax
                 #if rgb[0] >= tot_size * 0.2: #if more than half the image
                 #    self.match_degree = 1.0

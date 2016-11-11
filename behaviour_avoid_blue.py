@@ -50,6 +50,7 @@ class Behaviour_avoid_blue():
             print("MOST_RGB: ", most_rgb, " vs ", im.xmax * im.ymax)
             if most_rgb == rgb[1][2]: #if the dominant colour is blue
                 tot_size = im.xmax * im.ymax
+                print("inside")
                 if rgb[0]*2>=tot_size: #if blue is more than half the image
                     self.match_degree = 1.0
                 else:

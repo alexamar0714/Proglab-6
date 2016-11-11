@@ -46,29 +46,8 @@ class Behaviour_line_follower():
 		#the line is and recomends turning towards the middle
 		if self.active_flag:
 		
-			'''l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
-			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
-
-			weightInner = 1; weightMid = 4; weightOuter = 8
-
-			l = l1 * weightInner + l2 * weightMid + l3 * weightOuter
-			r = r1 * weightInner + r2 * weightMid + r3 * weightOuter
-
-			total = l - r
-			print('Total:',total)		
-			speed = 0.1*total
-			self.match_degree =1000
-
-			if total < 0.3 and total > -0.3:
-				self.motor_recommandations = [("base",0,0.5)]
-
 			
-			elif total > 0:
-				self.motor_recommandations = [("inc_l",0.001,0.5)]
-			else: 
-				self.motor_recommandations = [("inc_r",0.001,0.5)]
-			'''
-			max_read = 100
+			max_read = 0.8
 			turn = False
 			print(reflactance_values)
 			for sensor in reflactance_values:

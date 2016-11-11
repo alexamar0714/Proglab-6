@@ -43,6 +43,7 @@ class BBCON():
         self.update_all_sensobs()
         self.update_all_behaviours()
         if self.ultra_detected:
+            print("camera is on")
             last_sens = len(self.sensobs) - 1
             last_beh = len(self.behaviours) - 1
             self.sensobs[last_sens].update()

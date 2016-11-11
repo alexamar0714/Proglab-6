@@ -78,6 +78,15 @@ class BBCON():
                 print('l-drive:', motor_recc)
                 for motobs in self.motobs:
                     motobs.left(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "base":
+                for motobs in self.motobs:
+                    motobs.base(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "inc_r":
+                for motobs in self.motobs:
+                    motobs.inc_r(speed = tuples[1], dur = tuples[2])
+            elif tuples[0] == "inc_l":
+                for motobs in self.motobs:
+                    motobs.inc_l(speed = tuples[1], dur = tuples[2])
             print("sleepend")
             time.sleep(tuples[2])
             

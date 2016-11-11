@@ -60,6 +60,7 @@ class Behaviour_line_follower():
 				self.motor_reccomandations = [("inc_r", base_speed * 3, 0.5)]
 			elif index == 0:
 				self.motor_reccomandations = [("base", base_speed * 6, 0.5)]
+			self.match_degree = 10
 
 
 	def update(self):

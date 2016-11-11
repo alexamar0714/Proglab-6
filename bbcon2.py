@@ -66,7 +66,6 @@ class BBCON():
                 print('f-drive:', motor_recc)
                 for motobs in self.motobs:
                     motobs.forward(speed = tuples[1], dur = tuples[2])
-                old_l_speed = tuples[1]; old_r_speed = tuples[1]
             elif tuples[0] == "b":
                 print('b-drive:', motor_recc)
                 for motobs in self.motobs:

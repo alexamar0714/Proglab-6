@@ -45,41 +45,7 @@ class Behaviour_line_follower():
 		#THRESHOLD value. Prioritizes higher the longer away from the middle
 		#the line is and recomends turning towards the middle
 		if self.active_flag:
-			'''#Low Pri
-			l = reflactance_values[2]
-			r = reflactance_values[3]
-			if l > self.THRESHOLD or r > self.THRESHOLD:
-				self.match_degree = 0.33
-				if r < self.THRESHOLD:
-					self.motor_recommandations = [("f",0.15,0)]
-				else:
-					self.motor_recommandations = [("f",0.15,0)]
-				return self.motor_recommandations
-
-			#Medium Pri
-			l = reflactance_values[1]
-			r = reflactance_values[4]
-			if l > self.THRESHOLD or r > self.THRESHOLD:
-				self.match_degree = 0.66
-				if r < self.THRESHOLD:
-					self.motor_recommandations = [("l",0.1,0.5)]
-				else:
-					self.motor_recommandations = [("r",0.1,0.5)]
-				return self.motor_recommandations
-
-			#High Pri
-			l = reflactance_values[0]
-			r = reflactance_values[5]
-			if l > self.THRESHOLD or r > self.THRESHOLD:
-				self.match_degree = 1.00
-				if r < self.THRESHOLD:
-					self.motor_recommandations = [("l",0.2,0.5)]
-				else:
-					self.motor_recommandations = [("r",0.2,0.5)]
-				return self.motor_recommandations
-			#Not on line
-			else: 
-				self.match_degree = 0.00'''
+		
 			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
 			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
 
@@ -94,13 +60,13 @@ class Behaviour_line_follower():
 			self.match_degree =1000
 
 			if total < 1 and total > -1:
-				self.motor_recommandations = [("f",0.25,0.5)]
+				self.motor_recommandations = [("base",0,0.5)]
 
 			
 			elif total > 0:
-				self.motor_recommandations = [("r",abs(speed),0.5)]
+				self.motor_recommandations = [("inc_r",abs(speed),0.5)]
 			else: 
-				self.motor_recommandations = [("l",abs(speed),0.5)]
+				self.motor_recommandations = [("inc_l",abs(speed),0.5)]
 
 
 	def update(self):

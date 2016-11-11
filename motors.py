@@ -36,20 +36,20 @@ class Motors():
         self.set_left_dir(0)
         self.set_right_dir(0)
         self.stop()
-        self.set_left_speed(self.base_speed)
         self.set_right_speed(self.base_speed)
+        self.set_left_speed(self.base_speed)
         
     def inc_r(self, speed = 0, dur = None):
         s = int(self.max * speed)
         self.stop()
-        self.set_left_speed(self.base_speed - s)
-        self.set_right_speed(self.base_speed)
+        self.set_right_speed(self.base_speed - s)
+        self.set_left_speed(self.base_speed)
     
     def inc_l(self, speed = 0, dur = None):
         s = int(self.max * speed)
         self.stop()
-        self.set_right_speed(self.base_speed - s)
-        self.set_left_speed(self.base_speed)
+        self.set_left_speed(self.base_speed - s)
+        self.set_right_speed(self.base_speed)
         
 ###################################################################################################
         

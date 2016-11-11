@@ -47,7 +47,7 @@ class BBCON():
         self.update_motobs(motor_recc, halt_req)
 
     def update_all_sensobs(self, num = 0):
-        if num == 1 and ultra_detect:
+        if num == 1 and self.ultra_detected:
             for sensors in self.sensobs:
                 sensors.update()
         else:
@@ -58,7 +58,7 @@ class BBCON():
                     sensob.update()
 
     def update_all_behaviours(self, num = 0):
-        if num == 1 and ultra_detect:
+        if num == 1 and self.ultra_detected:
             for behaviour in self.behaviours:
                 behaviour.update()
         else:

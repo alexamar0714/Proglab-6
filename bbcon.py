@@ -27,6 +27,7 @@ class BBCON():
 
     def get_behaviours(self):
         return self.behaviours
+    
     def active_behaviour(self, behaviour):
         if behaviour not in self.active_behaviours:
             self.active_behaviours.append(behaviour)
@@ -39,34 +40,30 @@ class BBCON():
         self.ultra_detect = bool
         
     def run_one_timestep(self):
-        for x in range(2):
-            self.update_all_sensobs(num = x)
-            self.update_all_behaviours(num = x)
-            self.reset_all_sensobs()
+        self.update_all_sensobs()
+        self.update_all_behaviours()
+        if self.ultra_detected:
+            last_sens = len(self.sensobs) - 1
+            last_beh = len(self.behaviours) - 1
+            self.sensobs[last_sens].update()
+            self.behaviour[last_beh].update()
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)
+        self.reset_all_sensobs()
 
-    def update_all_sensobs(self, num = 0):
-        if num == 1 and self.ultra_detected:
-            for sensors in self.sensobs:
-                sensors.update()
-        else:
-            for ind, sensob in enumerate(self.sensobs):
-                if ind == 0:
-                    continue
-                else:
-                    sensob.update()
-
-    def update_all_behaviours(self, num = 0):
-        if num == 1 and self.ultra_detected:
-            for behaviour in self.behaviours:
-                behaviour.update()
-        else:
-            for ind, behave in enumerate(self.behaviours):
-                if ind == 0:
-                    continue
-                else:
-                    behave.update()
+    def update_all_sensobs(self):
+        for ind, sensob in enumerate(self.sensobs):
+            if ind == len(self.sensonbs) - 1:
+                continue
+            else:
+                sensob.update()
+                
+    def update_all_behaviours(self):
+        for ind, behave in enumerate(self.behaviours):
+            if ind == len(self.behaviours) - 1:
+                continue
+            else:
+                behave.update()
 
     def reset_all_sensobs(self):
         for sensors in self.sensobs:

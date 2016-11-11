@@ -46,7 +46,7 @@ class Behaviour_avoid_blue():
             print("BLUE AVOID")
             im = self.cam.get_value() #fra Image.open(....)
             im = Imager(image=im)
-            cwd = os.getcwd(
+            cwd = os.getcwd()
             im.dump_image(cwd)
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0], rgb[1][1], rgb[1][2])

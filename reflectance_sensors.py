@@ -68,8 +68,8 @@ class ReflectanceSensors():
                     self.min_val[index] = time.microseconds
 
             # Print the calculated time in microseconds
-            print("Pin: " + str(pin))
-            print(time.microseconds)
+            #print("Pin: " + str(pin))
+            #print(time.microseconds)
 
     def get_sensor_reading(self, pin):
         GPIO.setup(pin, GPIO.IN)

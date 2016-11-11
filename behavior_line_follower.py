@@ -54,7 +54,7 @@ class Behaviour_line_follower():
 				if sensor < max_read:
 					print('Sving!')
 					self.match_degree = 1000
-					self.motor_recommandations = [('r',0.25, 0.5)]
+					self.motor_recommandations = [('r',0.5, 0.1)]
 					turn = True
 			if not turn:
 				self.match_degree = 0

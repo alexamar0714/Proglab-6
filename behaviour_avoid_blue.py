@@ -1,4 +1,5 @@
 from imager2 import Imager
+import os
 
 class Behaviour_avoid_blue():
 
@@ -48,6 +49,8 @@ class Behaviour_avoid_blue():
             print("BLUE AVOID")
             im = self.cam.get_value() #fra Image.open(....)
             im = Imager(image=im)
+            cwd = os.getcwd()
+            im.dump_image(cwd)
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2])
             print("MOST_RGB: ", rgb[0], " vs ", im.xmax * im.ymax)

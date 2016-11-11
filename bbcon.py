@@ -55,7 +55,7 @@ class BBCON():
                 if ind == 0:
                     continue
                 else:
-                    behvaiour.update()
+                    behaviour.update()
 
     def update_all_behaviours(self, num = 0):
         if num == 1 and ultra_detect:

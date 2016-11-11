@@ -64,9 +64,9 @@ class AvoidObj():
         if temp_d <= dist_cm * 3:
             self.bbcon.ultra_detected(True)
             if sides[0]:    #left detected
-                self.motor_recc = [("r", 0.5, 1)]
+                self.motor_recc = [("r", 0.5, 0.5)]
             elif sides[1]:   #right detected
-                self.motor_recc = [("l", 0.5, 1)]
+                self.motor_recc = [("l", 0.5, 0.5)]
             else:           #default, no sides detected
-                self.motor_recc = [("r", 0.5, 1)]
+                self.motor_recc = [("r", 0.5, 0.5)]
             self.match_degree = 1.0

@@ -7,6 +7,7 @@ class BBCON():
     active_behaviours = []
     sensobs = []
     motobs = []
+    ultra_detect = False
     arbitrator = None
 
     def __init__(self):
@@ -34,23 +35,38 @@ class BBCON():
         if behaviour in self.active_behaviours:
             self.active_behaviours.remove(behaviour)
 
-
+    def ultra_detected(self, bool):
+        self.ultra_detect = bool
+        
     def run_one_timestep(self):
-        self.update_all_sensobs()
-        self.update_all_behaviours()
+        for x in range(2):
+            self.update_all_sensobs(num = x)
+            self.update_all_behaviours(num = x)
+            self.reset_all_sensobs()
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
-        print('motor_recc:', motor_recc)
         self.update_motobs(motor_recc, halt_req)
-        print(self.active_behaviours)
-        self.reset_all_sensobs()
 
-    def update_all_sensobs(self):
-        for sensors in self.sensobs:
-            sensors.update()
+    def update_all_sensobs(self, num = 0):
+        if num == 1 and ultra_detect:
+            for sensors in self.sensobs:
+                sensors.update()
+        else:
+            for ind, behave in enumerate(self.sensobs):
+                if ind == 0:
+                    continue
+                else:
+                    behvaiour.update()
 
-    def update_all_behaviours(self):
-        for behaviour in self.behaviours:
-            behaviour.update()
+    def update_all_behaviours(self, num = 0):
+        if num == 1 and ultra_detect:
+            for behaviour in self.behaviours:
+                behaviour.update()
+        else:
+            for ind, behave in enumerate(self.behaviours):
+                if ind == 0:
+                    continue
+                else:
+                    behaviour.update()
 
     def reset_all_sensobs(self):
         for sensors in self.sensobs:

@@ -42,6 +42,8 @@ class BBCON():
     def run_one_timestep(self):
         self.update_all_sensobs()
         self.update_all_behaviours()
+        motor_recc = None
+        halt_req = None
         if self.ultra_detect:
             print("camera is on")
             last_sens = len(self.sensobs) - 1

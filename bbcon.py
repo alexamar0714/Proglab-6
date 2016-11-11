@@ -54,7 +54,9 @@ class BBCON():
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
             self.behaviours[last_beh].weight = 0
             self.sensobs.pop()
-            self.sensobs.append(Camera())      
+            new_cam = Camera()
+            self.sensobs.append(new_cam)
+            self.behaviours[last_beh].new_cam(new_cam)
         else:
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)

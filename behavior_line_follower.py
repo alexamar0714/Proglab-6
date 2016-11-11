@@ -68,6 +68,7 @@ class Behaviour_line_follower():
 			else: 
 				self.motor_recommandations = [("inc_r",0.001,0.5)]
 			'''
+			max_read = 2000
 			turn = False
 			for sensor in reflactance_values:
 				if sensor > max_read:

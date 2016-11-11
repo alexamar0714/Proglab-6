@@ -1,4 +1,5 @@
 import time
+from camera import Camera
 
 class BBCON():
 
@@ -52,6 +53,8 @@ class BBCON():
             self.ultra_detect = False
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
             self.behaviours[last_beh].weight = 0
+            self.sensobs.pop()
+            self.sensobs.append(Camera())      
         else:
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)

@@ -53,7 +53,7 @@ class BBCON():
 
     def update_all_sensobs(self):
         for ind, sensob in enumerate(self.sensobs):
-            if ind == len(self.sensonbs) - 1:
+            if ind == len(self.sensobs) - 1:
                 continue
             else:
                 sensob.update()

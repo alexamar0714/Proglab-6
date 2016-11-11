@@ -5,7 +5,7 @@ import wiringpi as wp
 
 
 class Motors():
-    base_speed = int(1024 * 0.1)
+    base_speed = int(1024 * 0.2)
     
     def __init__(self):
         self.setup()

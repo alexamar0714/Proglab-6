@@ -66,7 +66,7 @@ class BBCON():
                 if ind == 0:
                     continue
                 else:
-                    behaviour.update()
+                    behave.update()
 
     def reset_all_sensobs(self):
         for sensors in self.sensobs:

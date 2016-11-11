@@ -45,7 +45,7 @@ class Behaviour_line_follower():
 		#THRESHOLD value. Prioritizes higher the longer away from the middle
 		#the line is and recomends turning towards the middle
 		if self.active_flag:
-		
+			'''	
 			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
 			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
 
@@ -67,6 +67,18 @@ class Behaviour_line_follower():
 				self.motor_recommandations = [("inc_l",abs(speed),0.5)]
 			else: 
 				self.motor_recommandations = [("inc_r",abs(speed),0.5)]
+			'''
+			turn = False
+			for sensor in reflactance_values:
+				if sensor > max_read:
+					self.match_degree = 1000
+					self.motor_recommandations = [('r',0.25, 0.5)]
+					turn = True
+			if not turn:
+				self.match_degree = 0
+				self.motor_recommandations = [('f',0,0)]
+
+
 
 
 	def update(self):

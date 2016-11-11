@@ -14,9 +14,6 @@ class Behaviour_avoid_blue():
         self.priority = 100
         self.match_degree = 0.0
         self.weight = self.priority*self.match_degree
-    
-    def new_cam(self, cam):
-        self.cam = cam
         
     def get_weight(self):
         return self.weight
@@ -62,10 +59,6 @@ class Behaviour_avoid_blue():
                 #    self.match_degree = 1.0
                 #else:
                 #    self.match_degree = 0
-            
-            
-        
-
 
     def update(self):
         self.consider_activation()

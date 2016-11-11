@@ -49,7 +49,7 @@ class Behaviour_line_follower():
 			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
 			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
 
-			weightInner = 1; weightMid = 3; weightOuter = 4
+			weightInner = 1; weightMid = 4; weightOuter = 8
 
 			l = l1 * weightInner + l2 * weightMid + l3 * weightOuter
 			r = r1 * weightInner + r2 * weightMid + r3 * weightOuter
@@ -64,9 +64,9 @@ class Behaviour_line_follower():
 
 			
 			elif total > 0:
-				self.motor_recommandations = [("inc_l",0.2,0.5)]
+				self.motor_recommandations = [("inc_l",abs(speed),0.5)]
 			else: 
-				self.motor_recommandations = [("inc_r",0.2,0.5)]
+				self.motor_recommandations = [("inc_r",abs(speed),0.5)]
 
 
 	def update(self):

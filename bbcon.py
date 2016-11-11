@@ -58,7 +58,7 @@ class BBCON():
 
     def update_motobs(self, motor_recc, halt_req):
         for tuples in motor_recc:
-            if halt_req or mtoro_recc[0] == None:
+            if halt_req or motro_recc[0] == None:
                 for motobs in self.motobs:
                     print("STOPPING")
                     motobs.stop()

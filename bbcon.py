@@ -50,7 +50,7 @@ class BBCON():
             self.behaviours[last_beh].update()
             self.ultra_detect = False
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
-            self.behaviours[last_beh].consider_deactivation()
+            self.behaviours[last_beh].match_degree = 0
         else:
             motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)

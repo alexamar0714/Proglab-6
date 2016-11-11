@@ -10,7 +10,7 @@ class Behaviour_avoid_blue():
         self.motor_recommandations = [('b', 1, 0.5),('f', 1, 0.5),('r', 1, 0.5),('r', 1, 0.5),('r', 1, 0.5)]
         self.active_flag = False
         self.halt_request = False
-        self.priority = 1
+        self.priority = 8
         self.match_degree = 0.0
         self.weight = self.priority*self.match_degree
 
@@ -51,9 +51,8 @@ class Behaviour_avoid_blue():
                 tot_size = im.xmax * im.ymax
                 if rgb[0]>=tot_size*0.99: #if blue is more than half the image
                     self.match_degree = 1.0
-                    self.priority = 16
                 else:
-                    self.match_degree = (rgb[0]*2)/tot_size
+                    self.match_degree = 0
             
             
         

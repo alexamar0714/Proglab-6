@@ -51,11 +51,11 @@ class BBCON():
             for sensors in self.sensobs:
                 sensors.update()
         else:
-            for ind, behave in enumerate(self.sensobs):
+            for ind, sensob in enumerate(self.sensobs):
                 if ind == 0:
                     continue
                 else:
-                    behaviour.update()
+                    sensob.update()
 
     def update_all_behaviours(self, num = 0):
         if num == 1 and ultra_detect:

@@ -46,27 +46,20 @@ class Behaviour_line_follower():
 		#the line is and recomends turning towards the middle
 		if self.active_flag:
 		
-			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
-			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
+			max_val = max(reflactance_values)
+			index = reflactance_values.find(max_val)
+			base_speed = 0.2
 
-			weightInner = 1; weightMid = 4; weightOuter = 8
-
-			l = l1 * weightInner + l2 * weightMid + l3 * weightOuter
-			r = r1 * weightInner + r2 * weightMid + r3 * weightOuter
-
-			total = l - r
-			print('Total:',total)		
-			speed = 0.1*total
-			self.match_degree =1000
-
-			if total < 1 and total > -1:
-				self.motor_recommandations = [("base",0,0.5)]
-
-			
-			elif total > 0:
-				self.motor_recommandations = [("inc_l",abs(speed),0.5)]
-			else: 
-				self.motor_recommandations = [("inc_r",abs(speed),0.5)]
+			if index == 2 or index == 3:
+				self.motor_reccomandations = [("base", base_speed, 0.5)]
+			elif index == 4:
+				self.motor_reccomandations = [("inc_l", base_speed * 3, 0.5)]
+			elif index == 5:
+				self.motor_reccomandations = [("inc_l", base_speed * 6, 0.5)]
+			elif index == 1:
+				self.motor_reccomandations = [("inc_r", base_speed * 3, 0.5)]
+			elif index == 0:
+				self.motor_reccomandations = [("base", base_speed * 6, 0.5)]
 
 
 	def update(self):

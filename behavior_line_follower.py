@@ -51,15 +51,15 @@ class Behaviour_line_follower():
 			base_speed = 0.2
 
 			if index == 2 or index == 3:
-				self.motor_reccomandations = [("base", base_speed, 0.5)]
+				self.motor_recommandations = [("base", base_speed, 0.5)]
 			elif index == 4:
-				self.motor_reccomandations = [("inc_l", base_speed * 3, 0.5)]
+				self.motor_recommandations = [("inc_l", base_speed * 3, 0.5)]
 			elif index == 5:
-				self.motor_reccomandations = [("inc_l", base_speed * 6, 0.5)]
+				self.motor_recommandations = [("inc_l", base_speed * 6, 0.5)]
 			elif index == 1:
-				self.motor_reccomandations = [("inc_r", base_speed * 3, 0.5)]
+				self.motor_recommandations = [("inc_r", base_speed * 3, 0.5)]
 			elif index == 0:
-				self.motor_reccomandations = [("base", base_speed * 6, 0.5)]
+				self.motor_recommandations = [("base", base_speed * 6, 0.5)]
 			self.match_degree = 10
 
 

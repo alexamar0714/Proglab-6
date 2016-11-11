@@ -49,9 +49,11 @@ class BBCON():
             self.sensobs[last_sens].update()
             self.behaviours[last_beh].update()
             self.ultra_detect = False
-        motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
+            motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
+            self.behaviours[last_beh].consider_deactivation()
         self.update_motobs(motor_recc, halt_req)
         self.reset_all_sensobs()
+        
 
     def update_all_sensobs(self):
         for ind, sensob in enumerate(self.sensobs):

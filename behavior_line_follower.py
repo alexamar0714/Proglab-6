@@ -47,7 +47,7 @@ class Behaviour_line_follower():
 		if self.active_flag:
 		
 			
-			max_read = 0.2
+			max_read = 0.5
 			turn = False
 			print(reflactance_values)
 			for sensor in reflactance_values:

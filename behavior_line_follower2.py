@@ -71,6 +71,7 @@ class Behaviour_line_follower():
 			turn = False
 			for sensor in reflactance_values:
 				if sensor > max_read:
+				print('Sving!')
 					self.match_degree = 1000
 					self.motor_recommandations = [('r',0.25, 0.5)]
 					turn = True

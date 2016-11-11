@@ -5,7 +5,7 @@ import wiringpi as wp
 
 
 class Motors():
-    base_speed = int(1024 * 0.5)
+    base_speed = int(1024 * 0.2)
     
     def __init__(self):
         self.setup()
@@ -35,7 +35,7 @@ class Motors():
     def base(self, speed = 0.5, dur = None):
         self.set_left_dir(0)
         self.set_right_dir(0)
-        self.set_left_Speed(self.base_speed)
+        self.set_left_speed(self.base_speed)
         self.set_right_speed(self.base_speed)
         self.persist(dur + 1)
         

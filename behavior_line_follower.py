@@ -49,14 +49,14 @@ class Behaviour_line_follower():
 			l1 = reflactance_values[2];l2 = reflactance_values[1];l3 = reflactance_values[0]
 			r1 = reflactance_values[3];r2 = reflactance_values[4];r3 = reflactance_values[5]
 
-			weightInner = 1; weightMid = 2.6; weightOuter = 3
+			weightInner = 1; weightMid = 3; weightOuter = 4
 
 			l = l1 * weightInner + l2 * weightMid + l3 * weightOuter
 			r = r1 * weightInner + r2 * weightMid + r3 * weightOuter
 
 			total = l - r
 			print('Total:',total)		
-			speed = 0.15*total
+			speed = 0.1*total
 			self.match_degree =1000
 
 			if total < 1 and total > -1:

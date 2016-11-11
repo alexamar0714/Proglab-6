@@ -23,14 +23,14 @@ def start():
 
     bbcon.add_motobs(motor)
     bbcon.set_arb(arb)
-    bbcon.add_behaviour(Behaviour_avoid_blue(bb=bbcon, cam=cam, ultra=ultra))
     bbcon.add_behaviour(AvoidObj(bbcon, ultra, ir))
     bbcon.add_behaviour(Behaviour_line_follower(bbcon, reflect_sens))
     bbcon.add_behaviour(fub(bb=bbcon))
-    bbcon.add_sensob(cam)
+    bbcon.add_behaviour(Behaviour_avoid_blue(bb=bbcon, cam=cam, ultra=ultra))
     bbcon.add_sensob(reflect_sens)
     bbcon.add_sensob(ir)
     bbcon.add_sensob(ultra)
+    bbcon.add_sensob(cam)
 
     butt = ZumoButton()
     butt.wait_for_press()

@@ -30,7 +30,7 @@ class AvoidObj():
 
     def consider_deactivation(self):
         print(self.ultra.get_value())
-        if self.ultra.get_value() > 20:
+        if self.ultra.get_value() > 17:
             self.active_flag = False
             self.bbcon.deactivate_behaviour(self)
             self.match_degree = 0.0
@@ -39,7 +39,7 @@ class AvoidObj():
 
     def consider_activation(self):
         print(self.ultra.get_value())
-        if self.ultra.get_value() <= 20:
+        if self.ultra.get_value() <= 17:
             self.update_weight()
             self.active_flag = True
             self.bbcon.deactivate_behaviour(self)
@@ -52,7 +52,7 @@ class AvoidObj():
 
 
     def update_weight(self): ##behaviour specific method
-        dist_cm = 20
+        dist_cm = 17
         temp_dist = self.ultra.get_value()
         self.ultra.update()
         temp_dist2 = self.ultra.get_value()

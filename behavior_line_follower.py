@@ -48,7 +48,7 @@ class Behaviour_line_follower():
 		
 			max_val = max(reflactance_values)
 			index = reflactance_values.index(max_val)
-			base_speed = 0.2
+			base_speed = 0.01
 
 			if index == 2 or index == 3:
 				self.motor_recommandations = [("base", base_speed, 0.5)]

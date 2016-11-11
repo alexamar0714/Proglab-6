@@ -28,7 +28,7 @@ class Behaviour_avoid_blue():
 
         
     def consider_deactivation(self):
-        if self.ultra.get_value()>30:
+        if self.ultra.get_value()>15:
             self.active_flag = False
             self.match_degree = 0.0
         

@@ -8,7 +8,7 @@ class Behaviour_line_follower():
 		self.motor_recommandations = [('f',0,0)]
 		self.active_flag = True
 		self.halt_request = False
-		self.priority = 100
+		self.priority = 2
 		self.match_degree = 0.0
 		self.weight = self.priority*self.match_degree
 
@@ -53,7 +53,7 @@ class Behaviour_line_follower():
 			for sensor in reflactance_values:
 				if sensor < max_read:
 					print('Sving!')
-					self.match_degree = 1000
+					self.match_degree = 1
 					self.motor_recommandations = [('r',0.5, 1)]
 					turn = True
 			if not turn:

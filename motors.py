@@ -5,6 +5,8 @@ import wiringpi as wp
 
 
 class Motors():
+    base_speed = int(self.max * 0.5)
+    
     def __init__(self):
         self.setup()
 
@@ -29,7 +31,35 @@ class Motors():
     # For the following motion commands, the speed is in the range [-1, 1], indicating the fraction of the maximum
     # speed, with negative values indicating that the wheel will spin in reverse. The argument "dur" (duration)
     # is the time (in seconds) that the action will persist.
-
+    
+    def base(self, speed = 0.5, dur = None):
+        print("base speed")
+        self.set_left_dir(0)
+        self.set_right_dir(0)
+        self.set_left_Speed(self.base_speed)
+        self.set_right_speed(self.base_speed)
+        self.persist(dur)
+        
+    def inc_r(self, speed = 0.5, dur = None)
+        print("inc_r")
+        s = int(self.max * speed)
+        self.set_left_dir(0)
+        self.set_right_dir(0)
+        self.set_left_speed(self.base_speed)
+        self.set_right_speed(s)
+        self.persist(dur)
+    
+    def inc_l(self, speed = 0.5, dur = None)
+        print("inc_l")
+        s = int(self.max * speed)
+        self.set_left_dir(0)
+        self.set_right_dir(0)
+        self.set_left_speed(s)
+        self.set_right_speed(self.base_speed)
+        self.persist(dur)
+        
+###################################################################################################
+        
     def forward(self, speed=0.25, dur=None):
         print("FORWARD!")
         print('Speed:', speed, 'dur', dur)

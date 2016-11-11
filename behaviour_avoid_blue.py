@@ -7,7 +7,7 @@ class Behaviour_avoid_blue():
         self.cam = cam
         self.ultra = ultra
         self.sensobs = [cam]
-        self.motor_recommandations = [('b',1,1000),('f',1,1000),('r',1,1000),('r',1,1000),('r',1,1000)]
+        self.motor_recommandations = [('b', 1, 0.1),('f', 1, 0.1),('r', 1, 0.1),('r', 1, 0.1),('r', 1, 0.1)]
         self.active_flag = False
         self.halt_request = False
         self.priority = 1

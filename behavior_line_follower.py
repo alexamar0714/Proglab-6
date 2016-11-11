@@ -64,9 +64,9 @@ class Behaviour_line_follower():
 
 			
 			elif total > 0:
-				self.motor_recommandations = [("inc_l",0.15,0.5)]
+				self.motor_recommandations = [("inc_l",0.2,0.5)]
 			else: 
-				self.motor_recommandations = [("inc_r",0.15,0.5)]
+				self.motor_recommandations = [("inc_r",0.2,0.5)]
 
 
 	def update(self):

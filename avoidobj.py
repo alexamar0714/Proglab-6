@@ -30,7 +30,7 @@ class AvoidObj():
 
     def consider_deactivation(self):
         print(self.ultra.get_value())
-        if self.ultra.get_value() > 10:
+        if self.ultra.get_value() > 20:
             self.motor_recc = [('l',0,0)]
             self.active_flag = False
             self.bbcon.deactivate_behaviour(self)
@@ -40,7 +40,7 @@ class AvoidObj():
 
     def consider_activation(self):
         print(self.ultra.get_value())
-        if self.ultra.get_value() <= 10:
+        if self.ultra.get_value() <= 20:
             self.update_weight()
             self.active_flag = True
             self.bbcon.deactivate_behaviour(self)
@@ -53,7 +53,7 @@ class AvoidObj():
 
 
     def update_weight(self): ##behaviour specific method
-        dist_cm = 10
+        dist_cm = 20
         temp_dist = self.ultra.get_value()
         sides = self.ir_prox.get_value()
         print('sides:',sides)

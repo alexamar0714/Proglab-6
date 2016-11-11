@@ -42,11 +42,12 @@ class Behaviour_avoid_blue():
         #after, urgency very high
 
         if self.active_flag:
+            print("BLUE AVOID")
             im = self.cam.get_value() #fra Image.open(....)
             im = Imager(image=im)
             rgb = im.most_frequent_colour()
             most_rgb = max(rgb[1][0], rgb[1][1], rgb[1][2])
-            
+            print("MOST_RGB: ", most_rgb)
             if most_rgb == rgb[1][2]: #if the dominant colour is blue
                 tot_size = im.xmax * im.ymax
                 if rgb[0]*2>=tot_size: #if blue is more than half the image

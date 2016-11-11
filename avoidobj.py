@@ -62,6 +62,7 @@ class AvoidObj():
         sides = self.ir_prox.get_value()
         print('sides:',sides)
         if temp_d <= dist_cm * 3:
+            self.bbcon.ultra_detected(True)
             if sides[0]:    #left detected
                 self.motor_recc = [("r", 0.5, 1)]
             elif sides[1]:   #right detected

@@ -46,7 +46,7 @@ class BBCON():
             last_sens = len(self.sensobs) - 1
             last_beh = len(self.behaviours) - 1
             self.sensobs[last_sens].update()
-            self.behaviour[last_beh].update()
+            self.behaviours[last_beh].update()
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)
         self.reset_all_sensobs()

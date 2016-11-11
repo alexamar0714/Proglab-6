@@ -16,7 +16,10 @@ class Behaviour_avoid_blue():
 
     def get_weight(self):
         return self.weight
-
+    
+    def get_halt_request(self):
+        return self.halt_request
+    
     def get_motor_recc(self):
         return self.motor_recommandations
 

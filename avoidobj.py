@@ -61,6 +61,6 @@ class AvoidObj():
                 self.motor_recc = [("r", 0.5, 1)]
             elif sides[1]:   #right detected
                 self.motor_recc = [("l", 0.5, 1)]
-           # else:           #default, no sides detected
-           #     self.motor_recc = [("r", 1, 1)]
+            else:           #default, no sides detected
+                self.motor_recc = [("r", 0.5, 1)]
             self.match_degree = 1.0

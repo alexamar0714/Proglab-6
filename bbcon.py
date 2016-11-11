@@ -36,19 +36,19 @@ class BBCON():
         if behaviour in self.active_behaviours:
             self.active_behaviours.remove(behaviour)
 
-    def ultra_detected(self, bool):
-        self.ultra_detect = bool
+    def ultra_detected(self, booly):
+        self.ultra_detect = booly
         
     def run_one_timestep(self):
         self.update_all_sensobs()
         self.update_all_behaviours()
-        if self.ultra_detected:
+        if self.ultra_detect:
             print("camera is on")
             last_sens = len(self.sensobs) - 1
             last_beh = len(self.behaviours) - 1
             self.sensobs[last_sens].update()
             self.behaviours[last_beh].update()
-            self.ultra_detected = False
+            self.ultra_detect = False
         motor_recc, halt_req = self.arbitrator.choose_action(stochastic = False)
         self.update_motobs(motor_recc, halt_req)
         self.reset_all_sensobs()

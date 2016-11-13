@@ -29,7 +29,6 @@ class AvoidObj():
         return self.motor_recc
 
     def consider_deactivation(self):
-        print(self.ultra.get_value())
         if self.ultra.get_value() > 17:
             self.active_flag = False
             self.bbcon.deactivate_behaviour(self)
@@ -38,7 +37,6 @@ class AvoidObj():
             self.update_weight()
 
     def consider_activation(self):
-        print(self.ultra.get_value())
         if self.ultra.get_value() <= 17:
             self.update_weight()
             self.active_flag = True

@@ -1,7 +1,7 @@
 class Fuck_you_behaviour():
 	
 	#this behaviour is just so that when no other behaviour is active, ie all others have weight 0
-	#this will make it move forward.
+	#this will make it move forward. and therefore has a constant weight equal to 0.1
     	def __init__(self, bb=None):
         	self.bbcon = bb
         	self.motor_recommandations = [('f', 0.20, 0)]

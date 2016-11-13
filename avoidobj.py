@@ -52,7 +52,9 @@ class AvoidObj():
 
 
     def update_weight(self): ##behaviour specific method
-        dist_cm = 17
+        dist_cm = 17 #max detecting range
+        #checks ultra several times, because there are times when it randomly inputs 0 value, even though
+        #nothing is there
         temp_dist = self.ultra.get_value()
         self.ultra.update()
         temp_dist2 = self.ultra.get_value()
@@ -69,4 +71,5 @@ class AvoidObj():
                 self.motor_recc = [("l", 0.5, 0.5)]
             else:           #default, no sides detected
                 self.motor_recc = [("r", 0.5, 0.5)]
+            #has not implemented the case where both are detected
             self.match_degree = 1.0

@@ -26,10 +26,12 @@ def start():
     bbcon.add_behaviour(AvoidObj(bbcon, ultra, ir))
     bbcon.add_behaviour(Behaviour_line_follower(bbcon, reflect_sens))
     bbcon.add_behaviour(fub(bb=bbcon))
+    #behaviour avoid blue, has to be added last, do not change this, will screw up bbcon code
     bbcon.add_behaviour(Behaviour_avoid_blue(bb=bbcon, cam=cam, ultra=ultra))
     bbcon.add_sensob(reflect_sens)
     bbcon.add_sensob(ir)
     bbcon.add_sensob(ultra)
+    #cam has to be added last, will screw up bbcon code if not
     bbcon.add_sensob(cam)
 
     butt = ZumoButton()

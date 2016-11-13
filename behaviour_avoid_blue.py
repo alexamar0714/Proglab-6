@@ -27,44 +27,35 @@ class Behaviour_avoid_blue():
         self.weight = self.priority*self.match_degree
 
         
-    def consider_deactivation(self):
+    def consider_deactivation(self): #determines whether there is an object w. ultra, if not deactivates
         if self.ultra.get_value()>15:
             self.active_flag = False
             self.match_degree = 0.0
         
-    def consider_activation(self):
+    def consider_activation(self): #determines whether there is an object w. ultra, if there is, activates
         if self.ultra.get_value()<=30:
             self.active_flag = True
 
 
     def sense_and_act(self):
-        #if blue < 50% of image, urgency low
-        #after, urgency very high
-
         if self.active_flag:
             print("BLUE AVOID")
-            im = self.cam.get_value() #fra Image.open(....)
-            im = Imager(image=im)
-            rgb = im.most_frequent_colour()
-            most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2])
+            im = self.cam.get_value() #loads image from camera
+            im = Imager(image=im) #creates an Imager object
+            rgb = im.most_frequent_colour() # gets th most frequent pixel
+            most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2]) #gets th edominant RGB colour
             print("MOST_RGB: ", rgb[0], " vs ", im.xmax * im.ymax)
-            if most_rgb != rgb[1][0]: #if the dominant colour is blue
+            if most_rgb != rgb[1][0]: #if the dominant colour is not red
                 self.match_degree = 1
                 self.active_flag = False
-                #tot_size = im.xmax * im.ymax
-                #if rgb[0] >= tot_size * 0.2: #if more than half the image
-                #    self.match_degree = 1.0
-                #else:
-                #    self.match_degree = 0
+                
 
     def update(self):
         self.consider_activation()
         self.sense_and_act()
         self.update_weight()
 
-#b = Behaviour_avoid_blue()
-#b.active_flag = True
-#b.sense_and_act()
+
         
 
         

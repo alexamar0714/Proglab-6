@@ -34,7 +34,7 @@ def start():
 
     butt = ZumoButton()
     butt.wait_for_press()
-    print("weeeeeee")
+    print("Start zumo")
 
     while True:
         bbcon.run_one_timestep()

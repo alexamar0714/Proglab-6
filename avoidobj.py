@@ -62,7 +62,6 @@ class AvoidObj():
         temp_dist3 = self.ultra.get_value()
         temp_d = temp_dist + temp_dist2 + temp_dist3
         sides = self.ir_prox.get_value()
-        print('sides:',sides)
         if temp_d <= dist_cm * 3:
             self.bbcon.ultra_detected(True)
             if sides[0]:    #left detected

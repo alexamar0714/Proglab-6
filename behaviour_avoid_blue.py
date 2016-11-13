@@ -42,10 +42,11 @@ class Behaviour_avoid_blue():
             print("BLUE AVOID")
             im = self.cam.get_value() #loads image from camera
             im = Imager(image=im) #creates an Imager object
-            rgb = im.most_frequent_colour() # gets th most frequent pixel
-            most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2]) #gets th edominant RGB colour
+            rgb = im.most_frequent_colour() # gets the most frequent pixel
+            most_rgb = max(rgb[1][0],rgb[1][1], rgb[1][2]) #gets the edominant RGB colour
             print("MOST_RGB: ", rgb[0], " vs ", im.xmax * im.ymax)
-            if most_rgb != rgb[1][0]: #if the dominant colour is not red
+            #if the dominant colour is not red, camera is useless and gives off a picture with dominant red colour
+            if most_rgb != rgb[1][0]:
                 self.match_degree = 1
                 self.active_flag = False
                 

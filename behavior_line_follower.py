@@ -1,6 +1,6 @@
 
 class Behaviour_line_follower():
-	def __init__(self, bb, refSenss):
+	def __init__(self, bb, refSens):
 		self.bbqon = bb
 		self.ref_sensors = refSens
 		self.THRESHOLD = THRESHOLD

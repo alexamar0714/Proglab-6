@@ -1,6 +1,6 @@
 
 class Behaviour_line_follower():
-	def __init__(self, bb, refSens, THRESHOLD = 0.8):
+	def __init__(self, bb, refSenss):
 		self.bbqon = bb
 		self.ref_sensors = refSens
 		self.THRESHOLD = THRESHOLD
@@ -22,31 +22,21 @@ class Behaviour_line_follower():
 		self.weight = self.priority*self.match_degree
 
 	def consider_deactivation(self, reflactance_values):
-		#If all sensors show dark, the zumo has driven
-		#off the line and we can deactivate
-		#for value in reflactance_values:
-		#	if value < 1 - self.THRESHOLD:
-		#		return False
+		#We always want to look for the line, and therfore not deactivate
 		return True
+
+	def consider_activation(self, reflactance_values):
+		#We therfore dont have to consider activating
+		return False
 
 	def get_halt_request(self):
 		return self.halt_request
 
-
-	def consider_activation(self, reflactance_values):
-		#Check if the zumo has driven back on the line
-		#for value in reflactance_values:
-		#	if value > 1 - self.THRESHOLD:
-		#		return True
-		return False
-
 	def sense_and_act(self, reflactance_values):
-		#Check if the sensors is on the line based on a experimental
-		#THRESHOLD value. Prioritizes higher the longer away from the middle
-		#the line is and recomends turning towards the middle
+		#Checks all sensors and if we are above 50% of the max darkness limit we want to 
+		#turn the zumo. If no turn recc has been given we dont want to give a rec
+		#and lets the default behaviour(fob) win over this behaviour
 		if self.active_flag:
-		
-			
 			max_read = 0.5
 			turn = False
 			print(reflactance_values)
@@ -59,7 +49,6 @@ class Behaviour_line_follower():
 			if not turn:
 				self.match_degree = 0
 				self.motor_recommandations = [('f',0,0)]
-
 
 	def update(self):
 		reflactance_values = self.ref_sensors.get_value()

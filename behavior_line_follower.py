@@ -3,7 +3,6 @@ class Behaviour_line_follower():
 	def __init__(self, bb, refSens):
 		self.bbqon = bb
 		self.ref_sensors = refSens
-		self.THRESHOLD = THRESHOLD
 		self.sensobs = [self.ref_sensors]
 		self.motor_recommandations = [('f',0,0)]
 		self.active_flag = True
